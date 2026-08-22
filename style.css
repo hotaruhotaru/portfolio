@@ -1,0 +1,465 @@
+/* ==========================================================
+   変数定義(配色)
+   ========================================================== */
+:root {
+  --color-bg: #FBF2E4;           /* 全体背景: クリームアプリコット */
+  --color-stripe: #F5E5CC;       /* 斜めストライプの濃淡差分(控えめ) */
+  --color-navy: #1C2432;         /* ヒーロー箱・カードキャプション帯 */
+  --color-heading: #5B9AA0;      /* 見出しテキスト: ダスティブルー */
+  --color-accent: #E08B5C;       /* 強調テキスト: テラコッタオレンジ */
+  --color-accent-bg: #F7D9B8;    /* アクセント背景: ライトアプリコット */
+  --color-button: #D99A3E;       /* ボタン: マスタードオレンジ */
+  --color-text: #3A2E22;         /* 本文の基本文字色(背景に馴染むダークブラウン) */
+  --color-text-on-navy: #F2EFE6; /* ネイビー背景上の文字色 */
+
+  --font-base: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --max-width: 1100px;
+}
+
+/* ==========================================================
+   リセット・基本設定
+   ========================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--color-text);
+  line-height: 1.8;
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+  width: 100%;
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--color-bg),
+    var(--color-bg) 22px,
+    var(--color-stripe) 22px,
+    var(--color-stripe) 24px
+  );
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ==========================================================
+   共通: セクション見出し
+   ========================================================== */
+.section-title {
+  text-align: center;
+  color: var(--color-heading);
+  font-size: 1.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+section {
+  padding: 5rem 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ==========================================================
+   ヒーローセクション
+   ========================================================== */
+.hero {
+  padding: 4rem 1.5rem 5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero__title {
+  color: var(--color-heading);
+  font-size: 2.4rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.hero__box {
+  background-color: var(--color-navy);
+  color: var(--color-text-on-navy);
+  padding: 3rem 2rem;
+  border-radius: 4px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hero__icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+}
+
+.hero__copy {
+  font-size: 1.15rem;
+  line-height: 2;
+}
+
+.hero__highlight {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+/* ==========================================================
+   ABOUT ME セクション
+   ========================================================== */
+.about__inner {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.about__image {
+  flex: 1 1 320px;
+  max-width: 400px;
+}
+
+.about__image img {
+  border-radius: 4px;
+}
+
+.about__text {
+  flex: 1 1 400px;
+}
+
+.about__name {
+  color: var(--color-heading);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about__text p {
+  margin-bottom: 1.2rem;
+}
+
+.btn--read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  background-color: var(--color-button);
+  color: var(--color-text-on-navy);
+  letter-spacing: 0.15em;
+  font-size: 0.9rem;
+  border-radius: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.btn--read-more:hover {
+  opacity: 0.85;
+}
+
+.about__accordion {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--color-accent-bg);
+  border-radius: 4px;
+}
+
+.about__accordion-block {
+  margin-bottom: 1.5rem;
+}
+
+.about__accordion-block:last-child {
+  margin-bottom: 0;
+}
+
+.about__accordion-block h4 {
+  color: var(--color-navy);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.about__skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.about__skill-list li {
+  background-color: var(--color-navy);
+  color: var(--color-text-on-navy);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================
+   RECENT WORKS セクション
+   ========================================================== */
+.works__group {
+  margin-bottom: 4rem;
+}
+
+.works__group-title {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  border-bottom: 2px solid var(--color-accent-bg);
+  padding-bottom: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.works__category {
+  margin-bottom: 2.5rem;
+}
+
+.works__category-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  padding-left: 0.8rem;
+  border-left: 4px solid var(--color-accent);
+}
+
+.category-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.works__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.work-card {
+  background-color: var(--color-navy);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.work-card__trigger {
+  width: 100%;
+  text-align: left;
+}
+
+.work-card__trigger img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background-color: var(--color-navy);
+  padding: 0.8rem;
+}
+
+.work-card__caption {
+  color: var(--color-text-on-navy);
+  padding: 0.9rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================
+   モーダル(画像拡大表示)
+   ========================================================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(28, 36, 50, 0.85);
+}
+
+.modal__content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1;
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal__body img {
+  max-width: 90vw;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+}
+
+.modal__close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  color: var(--color-text-on-navy);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* ==========================================================
+   装飾: 葉っぱイラスト(角に配置)
+   ========================================================== */
+.decor-leaf {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decor-leaf--terracotta { color: var(--color-accent); opacity: 0.5; }
+.decor-leaf--mustard { color: var(--color-button); opacity: 0.45; }
+.decor-leaf--blue { color: var(--color-heading); opacity: 0.4; }
+
+.decor-leaf--hero-tl { top: -10px; left: -10px; transform: rotate(-25deg); }
+.decor-leaf--hero-br { bottom: -14px; right: 4%; transform: rotate(160deg); width: 34px; height: 34px; }
+.decor-leaf--about-tr { top: -20px; right: -10px; transform: rotate(35deg); }
+.decor-leaf--about-bl { bottom: -10px; left: 6%; transform: rotate(-100deg); width: 32px; height: 32px; }
+.decor-leaf--works-tl { top: -10px; left: -14px; transform: rotate(-60deg); }
+.decor-leaf--works-br { bottom: 20px; right: -12px; transform: rotate(120deg); width: 38px; height: 38px; }
+
+.hero,
+.about,
+.works,
+.personal {
+  position: relative;
+}
+
+/* ==========================================================
+   PERSONAL PROJECTS セクション
+   ========================================================== */
+.personal {
+  padding-bottom: 6rem;
+}
+
+.personal__intro {
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.personal__tools {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.personal-card {
+  position: relative;
+}
+
+.personal-card__badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  z-index: 2;
+  background-color: var(--color-accent);
+  color: var(--color-text-on-navy);
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+
+.work-card__note {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.75;
+  margin-top: 0.2rem;
+}
+
+.personal-card__link {
+  display: block;
+  text-align: center;
+  padding: 0.6rem;
+  color: var(--color-text-on-navy);
+  background-color: var(--color-heading);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.personal-card__link:hover {
+  opacity: 0.85;
+}
+
+/* ==========================================================
+   フッター
+   ========================================================== */
+.footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.8rem;
+  color: var(--color-text);
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .hero__title {
+    font-size: 1.7rem;
+    letter-spacing: 0.2em;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+  }
+
+  .hero__copy {
+    font-size: 1rem;
+  }
+
+  .works__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .decor-leaf--hero-tl { top: -4px; left: -4px; }
+  .decor-leaf--hero-br { right: 2%; }
+  .decor-leaf--about-tr { top: -10px; right: -4px; }
+  .decor-leaf--about-bl { left: 2%; }
+  .decor-leaf--works-tl { top: -4px; left: -4px; }
+  .decor-leaf--works-br { right: -4px; }
+}
