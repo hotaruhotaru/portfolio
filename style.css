@@ -262,6 +262,9 @@ section {
   background-color: var(--color-navy);
   border-radius: 4px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .work-card__trigger {
@@ -420,6 +423,7 @@ section {
   font-size: 0.85rem;
   text-decoration: none;
   transition: opacity 0.2s ease;
+  margin-top: auto;
 }
 
 .personal-card__link:hover {
